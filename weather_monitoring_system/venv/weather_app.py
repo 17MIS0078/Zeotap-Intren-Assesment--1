@@ -14,9 +14,6 @@ app = Flask(__name__)
 # Store daily weather data
 daily_weather = defaultdict(list)
 
-# User-configurable thresholds
-temperature_threshold = 35  # Alert if temperature exceeds 35 degrees Celsius
-
 # Function to fetch weather data for a city
 def get_weather_data(city):
     params = {
@@ -79,14 +76,16 @@ def fetch_weather_data():
                 process_weather_data(weather_data)
         time.sleep(300)  # Sleep for 5 minutes
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
-
-@app.route('/summary')
-def summary():
-    daily_summaries = calculate_daily_summary()
-    return render_template('summary.html', summaries=daily_summaries)
+    if request.method == 'POST':
+        city = request.form.get('city')
+        weather_data = get_weather_data(city)
+        if weather_data:
+            process_weather_data(weather_data)
+            daily_summaries = calculate_daily_summary()
+            return render_template('index.html', summaries=daily_summaries)
+    return render_template('index.html', summaries={})
 
 if __name__ == "__main__":
     # Start the background thread for fetching weather data

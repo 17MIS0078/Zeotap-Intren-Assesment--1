@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility Rule Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9; /* Add background color for better visibility */
+        }
+
+        h1 {
+            color: #333;
+            text-align: center; /* Center the title */
+        }
+
+        label {
+            font-weight: bold; /* Make labels bold */
+            display: block; /* Make each label occupy its own line */
+            margin-top: 15px; /* Add some space above each label */
+        }
+
+        textarea {
+            width: 100%; /* Full width */
+            margin-bottom: 10px;
+            padding: 10px; /* Add padding for better usability */
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 4px; /* Rounded corners */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            border: none;
+            border-radius: 4px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em; /* Larger text for results */
+            color: #333; /* Ensure text is visible */
+        }
+    </style>
+</head>
+<body>
+    <h1>Eligibility Rule Engine</h1>
+    
+    <label for="rule">Enter Rule:</label>
+    <textarea id="rule" rows="4" cols="50" placeholder="e.g., age > 18 AND income < 50000"></textarea>
+
+    <label for="user_data">User Data (JSON format):</label>
+    <textarea id="user_data" rows="4" cols="50" placeholder='{"age": 25, "income": 30000}'></textarea>
+
+    <button id="evaluate_btn">Evaluate</button>
+    
+    <div id="result"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>  <!-- Ensure this points correctly to the JS file -->
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+Rule Engine Application
+Overview
+This is a 3-tier rule engine application designed to determine user eligibility based on attributes like age, department, income, and experience. The application uses an Abstract Syntax Tree (AST) to represent and evaluate conditional rules, allowing for dynamic creation, combination, and modification of rules.
+
+Features
+Dynamic Rule Creation: Users can define custom rules using a simple syntax.
+AST Representation: Rules are stored as an Abstract Syntax Tree (AST) for efficient evaluation and manipulation.
+Eligibility Evaluation: The engine evaluates a user’s eligibility based on predefined rules and their corresponding attributes.
+Web Interface: A user-friendly interface for inputting rules, user data, and receiving evaluation results.
+Tech Stack
+Backend: Python (Flask)
+Frontend: HTML, CSS, JavaScript
+Data Structure: Abstract Syntax Tree (AST)
+Installation
+Clone the repository:
+
+bash
+
+git clone https://github.com/17MIS0078/Zeotap-Intren-Assesment--1.git
+cd Zeotap-Intren-Assesment--1
+Install dependencies: Make sure you have Python and pip installed, then run:
+
+bash
+pip install -r requirements.txt
+How to Run the Application
+Navigate to the backend directory:
+
+bash
+
+cd C:\rule_engine_project\.vs\backend
+Run the Flask application:
+
+bash
+
+python app.py
+Open your browser and go to:
+
+arduino
+
+http://127.0.0.1:5000
+Usage:
+
+Enter Rule: Provide your eligibility rule (e.g., age > 25 AND income >= 50000)
+User Data (JSON format): Input the user's data in JSON format (e.g., {"age": 30, "income": 60000})
+Click on Evaluate to get the result.
+Sample Input/Output Examples
+Enter Rule: age > 25 AND income >= 50000
+User Data: {"age": 30, "income": 60000}
+Result: Eligible
+
+Enter Rule: age >= 18 AND experience >= 3
+User Data: {"age": 22, "experience": 4}
+Result: Eligible
+
+Enter Rule: department = 'HR' AND experience > 2
+User Data: {"department": "HR", "experience": 5}
+Result: Eligible
+
+Enter Rule: salary > 50000 OR experience >= 10
+User Data: {"salary": 45000, "experience": 12}
+Result: Eligible
+
+Repository
+You can find the source code for this application at the following GitHub repository:
+
+https://github.com/17MIS0078/Zeotap-Intren-Assesment--1/tree/master

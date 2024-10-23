@@ -1,0 +1,70 @@
+# Weather Monitoring System
+
+## Overview
+The Weather Monitoring System is a web application built using Flask that provides real-time weather data for various cities. Users can enter a city name to retrieve its current weather conditions, including temperature, feels-like temperature, and weather condition summaries.
+
+## Features
+- Fetches real-time weather data from OpenWeatherMap API.
+- Displays average, maximum, and minimum temperatures for selected cities.
+- User-friendly interface with inline CSS for styling.
+
+## Technologies Used
+- **Backend**: Flask (Python)
+- **Frontend**: HTML with inline CSS
+- **API**: OpenWeatherMap API
+
+## Prerequisites
+- Python 3.x
+- Flask
+- Requests library
+
+## Installation
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/weather_monitoring_system.git
+    cd weather_monitoring_system
+    ```
+
+2. **Create a virtual environment** (optional but recommended):
+    ```bash
+    python -m venv venv
+    ```
+
+3. **Activate the virtual environment**:
+   - For Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+   - For macOS/Linux:
+     ```bash
+     source venv/bin/activate
+     ```
+
+4. **Install the required packages**:
+    ```bash
+    pip install flask requests
+    ```
+
+5. **Set your OpenWeatherMap API Key**:
+   - Replace the `API_KEY` variable in `weather_app.py` with your own OpenWeatherMap API key.
+
+## Usage
+1. Run the Flask application:
+    ```bash
+    python weather_app.py
+    ```
+
+2. Open a web browser and go to `http://127.0.0.1:5000/`.
+
+3. Enter a city name in the provided input field and click the "Get Weather" button to retrieve the weather information.
+
+## Example
+To check the weather in "Delhi", simply enter "Delhi" in the input field and click the button. The application will display the weather summary for the specified date.
+
+## Acknowledgments
+- [Flask](https://flask.palletsprojects.com/) - A micro web framework for Python.
+- [OpenWeatherMap API](https://openweathermap.org/api) - Provides weather data.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
